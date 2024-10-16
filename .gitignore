@@ -1,0 +1,6 @@
+/nodejs/node_modules/
+/nodejs/playwright-report/
+/nodejs/screenshots/*
+/nodejs/test-results/
+/nodejs/screenshots/*
+!/nodejs/screenshots/.gitkeep
