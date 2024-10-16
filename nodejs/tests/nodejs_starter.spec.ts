@@ -61,3 +61,17 @@ test('Form_textbox_checkbox_radiobutton_dropdown_alert', async ({ page }, TestIn
     // Alert here
     page.on('dialog', dialog => dialog.accept());
 });
+
+// Form test/automation test #2 with a slider control, use https://practice-automation.com
+test('Form_slider', async ({ page }) => {
+    await page.goto("https://practice-automation.com/slider/");
+    
+    // Verify that the webpage with the specified text appears correctly
+    await expect(page.getByRole('heading', { name: 'Slider' })).toBeVisible();
+
+    // Move the slider such that the text beneath it reads "Current value: 50"
+    await page.locator('#slideMe').fill('50');
+
+    // Verify that the text reads "50"
+    await expect(page.getByText('50')).toBeVisible();
+});
