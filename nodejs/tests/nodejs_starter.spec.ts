@@ -52,7 +52,7 @@ test('Form_textbox_checkbox_radiobutton_dropdown_alert', async ({ page }, TestIn
     await page.getByTestId("message").fill(displayCurrentDateAndTime(Usage.text));
 
     // Get a screenshot of the entire page after webpage elements have been selected
-    //await page.screenshot({ path: '../screenshots/' + displayCurrentDateAndTime(Usage.file) + '_screenshot.png', fullPage: true });
+    // Used TestInfo class to get name of the test, from https://stackoverflow.com/questions/73774819/how-to-get-the-current-test-name-for-playwright-in-typescript
     await page.screenshot({ path: './screenshots/' + displayCurrentDateAndTime(Usage.file) + '_' + TestInfo.title +'.png', fullPage: true });
 
     // Click the Submit button to submit the form
