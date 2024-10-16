@@ -75,3 +75,27 @@ test('Form_slider', async ({ page }) => {
     // Verify that the text reads "50"
     await expect(page.getByText('50')).toBeVisible();
 });
+
+// File upload test, using https://practice.expandtesting.com/upload
+test('File_upload', async ({ page }) => {
+    await page.goto("https://practice.expandtesting.com/upload");
+
+    // Verify the page that is needed
+    await expect(page.getByRole('heading', { name: 'File Uploader page for Automation Testing Practice' })).toBeVisible();
+
+    // Upload the file
+    const fileChooserPromise = page.waitForEvent('filechooser');
+    await page.getByTestId('file-input').click();
+    const fileChooser = await fileChooserPromise;
+    // 'path' is from nodejs, see https://nodejs.org/en/learn/manipulating-files/nodejs-file-paths
+    const path = require('node:path');
+    await fileChooser.setFiles(path.join('../upload_files/', '20241016_csv_sample_file_upload.csv'));
+
+    // Click the Upload button
+    await page.getByTestId('file-submit').click();
+
+    // Verify the "File Uploaded!" message appears
+    await expect(page.getByRole('heading', { name: 'File Uploaded!' })).toBeVisible();
+});
+
+// Table with data test, using 
