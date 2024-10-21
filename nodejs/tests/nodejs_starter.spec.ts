@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { Usage, displayCurrentDateAndTime } from  "../support/classes/date_and_time.ts";
+import { Usage, displayCurrentDateAndTime } from  "../support/date_and_time.ts";
 
 // Log in/log out test, using https://practice.expandtesting.com/login page
 test('Log_in_log_out', async ({ page }) => {
