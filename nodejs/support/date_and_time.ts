@@ -35,7 +35,7 @@ export function displayCurrentDateAndTime(usage_type: Usage): string {
 }
 
 function appendZeroCharacter(value: number): string {
-    if(value < 9) {
+    if(value < 10) {
         return('0' + value.toString());
     } else {
         return(value.toString());
