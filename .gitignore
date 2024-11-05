@@ -11,3 +11,5 @@
 !/nodejs/screenshots/.gitkeep
 /python/screenshots/*
 !/python/screenshots/.gitkeep
+/java/screenshots/*
+!/java/screenshots/.gitkeep
