@@ -9,6 +9,7 @@ public class DateAndTime {
         TEXT;
     }
 
+    // Return a string that has the latest date & time, but different strings depending on what it is used for
     public static String displayCurrentDateAndTime(Usage usage_type) {
         LocalDateTime currentDateAndTime = LocalDateTime.now();
 
@@ -28,6 +29,7 @@ public class DateAndTime {
         }
     }
 
+    // Method to add a "0" character in front for values that are 0-9
     private static String appendZeroCharacter(Integer value) {
         if(value < 10) {
             return("0" + value.toString());
