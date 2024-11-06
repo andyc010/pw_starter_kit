@@ -9,6 +9,7 @@ import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.assertions.PageAssertions;
 import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.FileChooser;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import java.nio.file.Paths;
@@ -112,5 +113,61 @@ public class PlaywrightJavaTest {
         page.onDialog(dialog -> {
             dialog.dismiss();
         });
+    }
+
+    // Another form test/automation with a slider control, using https://practice-automation.com
+    @Test
+    void shouldEditSlider() {
+        page.navigate("https://practice-automation.com/slider/");
+
+        // Verify that the webpage with the specified text appears correctly
+        assertThat(page.getByRole(AriaRole.HEADING,
+                                    new Page.GetByRoleOptions().setName("Slider"))).isVisible();
+
+        // Move the slider such that the text beneath it reads "Current value: 50"
+        page.locator("#slideMe").fill("50");
+
+        // Verify that the text reads "50"
+        assertThat(page.getByText("50")).isVisible();
+    }
+
+    // File upload test, using https://practice.expandtesting.com/upload page
+    @Test
+    void shouldUploadFile() {
+        page.navigate("https://practice.expandtesting.com/upload");
+
+        // Verify the page that is needed is present
+        assertThat(page.getByRole(AriaRole.HEADING,
+                    new Page.GetByRoleOptions().setName("File Uploader page for Automation Testing Practice"))).isVisible();
+
+        // Upload the file
+        final String uploadFile = "20241016_csv_sample_file_upload.csv"; 
+        FileChooser fileChooser = page.waitForFileChooser(() -> page.getByTestId("file-input").click());
+        // "Paths" is from a Java library, see import statement at the top of this file
+        fileChooser.setFiles(Paths.get("../upload_files/" + uploadFile));
+
+        // Click the Upload button
+        page.getByTestId("file-submit").click();
+
+        // Verify the "File Uploaded!" message appears
+        assertThat(page.getByRole(AriaRole.HEADING,
+                    new Page.GetByRoleOptions().setName("File Uploaded!"))).isVisible();
+    }
+
+    // Table with data test, using https://practice-automation.com/tables/ page
+    @Test
+    void shouldSeeTables() {
+        page.navigate("https://practice-automation.com/tables/");
+
+        // Verify that the page that is wanted is appearing
+        assertThat(page.getByRole(AriaRole.HEADING,
+                    new Page.GetByRoleOptions().setName("Tables"))).isVisible();
+
+        // Using the sortable table, press the Next link
+        page.getByText("Next").click();
+
+        // Verify the information on the first row (11th entry/rank with country = Ethiopia, population = 126.5 million) is present
+        assertThat(page.locator("td:has-text(\"Ethiopia\")")).isVisible();
+        assertThat(page.locator("td:has-text(\"126.5\")")).isVisible();
     }
 }
