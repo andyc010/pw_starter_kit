@@ -5,8 +5,11 @@
 /python/support/__pycache__/*
 /python/tests/__pycache__/*
 /python/.pytest_cache/
+/java/target/*
 # .gitkeep tip to preserve screenshots folder in git from https://stackoverflow.com/questions/115983/how-do-i-add-an-empty-directory-to-a-git-repository
 /nodejs/screenshots/*
 !/nodejs/screenshots/.gitkeep
 /python/screenshots/*
 !/python/screenshots/.gitkeep
+/java/screenshots/*
+!/java/screenshots/.gitkeep
