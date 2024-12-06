@@ -112,7 +112,8 @@ def test_tables(page: Page):
     expect(page.get_by_role("heading", name="Tables")).to_be_visible()
 
     # Using the sortable table, press the Next link
-    page.get_by_text("Next").click()
+    page.get_by_label("Next").click()
+    #page.get_by_text("Next").click() # This line of code no longer works, so it is replaced by the line above.
 
     # Verify the information on the first row (11th entry/rank with country = Ethiopia, population = 126.5 million) is present
     expect(page.locator("td", has_text="Ethiopia")).to_be_visible()
