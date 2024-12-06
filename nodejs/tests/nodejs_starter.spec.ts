@@ -109,7 +109,9 @@ test('Tables', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'Tables' })).toBeVisible();
 
     // Using the sortable table, press the Next link
-    await page.getByText('Next').click();
+    await page.getByLabel('Next').click();
+    //await page.getByText('Next').click(); # This line of code previously worked, but it no longer does.
+
 
     // Verify the information on the first row (11th entry/rank with country = Ethiopia, population = 126.5 million) is present
     await expect(page.locator('td', { hasText: 'Ethiopia' })).toBeVisible();

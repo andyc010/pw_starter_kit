@@ -164,7 +164,8 @@ public class PlaywrightJavaTest {
                     new Page.GetByRoleOptions().setName("Tables"))).isVisible();
 
         // Using the sortable table, press the Next link
-        page.getByText("Next").click();
+        page.getByLabel("Next").click();
+        //page.getByText("Next").click(); // This line of code no longer works, so it is replaced by the one above.
 
         // Verify the information on the first row (11th entry/rank with country = Ethiopia, population = 126.5 million) is present
         assertThat(page.locator("td:has-text(\"Ethiopia\")")).isVisible();

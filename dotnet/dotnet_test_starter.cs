@@ -133,7 +133,8 @@ public class PlaywrightDotnetTests : PageTest
         await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Tables" })).ToBeVisibleAsync();
 
         // Using the sortable table, press the Next link
-        await Page.GetByText("Next").ClickAsync();
+        await Page.GetByLabel("Next").ClickAsync();
+        //await Page.GetByText("Next").ClickAsync(); // This line of code no longer works, so it is replaced by the one above.
 
         // Verify the information on the first row (11th entry/rank with country = Ethiopia, population = 126.5 million) is present
         await Expect(Page.Locator("td", new() { HasText = "Ethiopia" })).ToBeVisibleAsync();
