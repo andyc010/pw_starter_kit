@@ -1,16 +1,16 @@
 # Playwright Starter Kit
 
 ## Introduction
-This repository is a collection of basic tests using the [Playwright](https://playwright.dev) framework in an effort to help people (including myself!) get started on working with Playwright, or to simply take a closer look at using it in a certain environment/language, such as in .NET w/C#.
+This repository is a collection of basic tests using the [Playwright](https://playwright.dev) framework in an effort to help individuals (including myself!) get started on working with Playwright, or to simply take a closer look at using it in a certain environment/language, such as in .NET w/C#.
 
 I am using publicly-available websites of [Practice Test Automation WebSite](https://practice.expandtesting.com/) and [automateNow](https://practice-automation.com/). These websites are part of a [list](https://github.com/BMayhew/awesome-sites-to-test-on) from Butch Mayhew, one of the [Playwright ambassadors](https://playwright.dev/python/community/ambassadors).
 
-I am hoping that I am doing my part to help the adoption of Playwright being used in testing.
+My hope that I am making a contribution to the adoption of Playwright being used in testing.
 
 ## Running the tests
 The instructions are generally from the Playwright documentation at https://playwright.dev/.
 
-To help limit the amount of differences between different operating systems, these tests below should work with minimal editing by using the commands below. However, with more editing, these tests can be run using different IDEs or even continuous-integration/continuous-development environments too.
+To help limit the amount of differences between running on different operating systems, these tests below should work with a minimal amount of changes by using the commands below.
 
 (I have been using Linux operating systems of Fedora & Linux Mint while creating these tests)
 
