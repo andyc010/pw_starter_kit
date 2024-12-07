@@ -5,19 +5,19 @@ This repository is a collection of basic tests using the [Playwright](https://pl
 
 I am using publicly-available websites of [Practice Test Automation WebSite](https://practice.expandtesting.com/) and [automateNow](https://practice-automation.com/). These websites are part of a [list](https://github.com/BMayhew/awesome-sites-to-test-on) from Butch Mayhew, one of the [Playwright ambassadors](https://playwright.dev/python/community/ambassadors).
 
-My hope that I am making a contribution to the adoption of Playwright being used in testing.
+My hope is that I am making a contribution to the adoption of Playwright being used in testing.
 
 ## Running the tests
 The instructions are generally from the Playwright documentation at https://playwright.dev/.
 
-To help limit the amount of differences between running on different operating systems, these tests below should work with a minimal amount of changes by using the commands below.
+To help limit the amount of differences between running on different operating systems, these tests below should work with a minimal amount of changes by using the command-line interface (CLI) with the commands below.
 
 (I have been using Linux operating systems of Fedora & Linux Mint while creating these tests)
 
 ### NodeJS
 First, ensure NodeJS is installed on the computer that will be used to install the tests. Then, download the folder & files (or clone the repository).
 
-Go inside the `nodeJS` folder of the repo, and using a command-line interface (as in a terminal for Linux or Mac, or PowerShell for Windows), type the following command to install the necessary files for the tests to run:
+Go inside the `nodeJS` folder of the repo, and using a CLI (as in a terminal for Linux or Mac, or PowerShell for Windows), type the following command to install the necessary files for the tests to run:
 ```
 npm init playwright@latest
 ```
