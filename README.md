@@ -14,8 +14,8 @@ To help limit the amount of differences between running on different operating s
 
 (I have been using Linux operating systems of Fedora & Linux Mint while creating these tests)
 
-### NodeJS
-First, ensure NodeJS is installed on the computer that will be used to install the tests. Then, download the folder & files (or clone the repository).
+### Node.js
+First, ensure Node.js is installed on the computer that will be used to install the tests. Then, download the folder & files (or clone the repository).
 
 Go inside the `nodeJS` folder of the repo, and using a CLI (as in a terminal for Linux or Mac, or PowerShell for Windows), type the following command to install the necessary files for the tests to run:
 ```
